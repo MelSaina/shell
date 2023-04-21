@@ -111,7 +111,7 @@ int _strcmp(char *s1, char *s2)
 
     return (s1[i] - s2[i]);
 }
-int _strncmp(char *s1, char *s2, int n)
+int _strncmp(const char*s1, const char *s2, int n)
 {
     int i;
 
@@ -145,7 +145,7 @@ char *_strcpy(char *dest, char *src)
     return (dest);
 }
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
     int len = 0;
 
@@ -157,7 +157,7 @@ int _strlen(char *s)
     return (len);
 }
 
-int main(void)
+int _main(void)
 {
     char cmd[MAX_CMD_LEN];
     char *args[MAX_ARGS];

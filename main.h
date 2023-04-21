@@ -23,5 +23,6 @@ char *read_line(void);
 int execute(char **args);
 void handle_signal(int signal);
 char *_getenv(const char *name);
+int _main(void);
 #endif /* MAIN_H */
 
