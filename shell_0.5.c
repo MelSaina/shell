@@ -1,8 +1,17 @@
 #include "main.h"
-#include <stdlib.h>
-
 
 extern char **environ;
+
+void print_environment(void)
+{
+    char **env_ptr = environ;
+
+    while (*env_ptr != NULL)
+    {
+        printf("%s\n", *env_ptr);
+        env_ptr++;
+    }
+}
 
 int main(void)
 {
@@ -39,6 +48,11 @@ int main(void)
             if (strcmp(args[0], "exit") == 0)
             {
                 exit(0);
+            }
+            else if (strcmp(args[0], "env") == 0)
+            {
+                print_environment();
+                continue;
             }
 
             path = _getenv("PATH");
@@ -77,4 +91,3 @@ int main(void)
 
     return (0);
 }
-
