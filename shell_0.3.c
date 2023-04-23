@@ -1,8 +1,7 @@
 #include "main.h"
 
 extern char **environ;
-
-int main(void)
+int main4(void)
 {
     char cmd[MAX_CMD_LEN];
     char *args[MAX_ARGS];
@@ -10,7 +9,8 @@ int main(void)
     char *token;
     char *path, *path_token, *path_copy;
     char full_path[MAX_CMD_LEN];
-
+	char *new_path = "/usr/bin:/usr/local/bin"; /* add the directories containing the commands you want to use*/
+	setenv("PATH", new_path, 1);
     while (1)
     {
         printf(PROMPT);
@@ -33,6 +33,12 @@ int main(void)
 
         if (args[0] != NULL)
         {
+            /* Check for built-in commands*/
+            if (strcmp(args[0], "exit") == 0)
+            {
+                exit(0);
+            }
+
             path = _getenv("PATH");
             path_copy = strdup(path);
             path_token = strtok(path_copy, DELIM);
@@ -69,7 +75,6 @@ int main(void)
 
     return (0);
 }
-
 char *_getenv(const char *name)
 {
         int i, len;

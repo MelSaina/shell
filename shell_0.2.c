@@ -15,19 +15,23 @@ int main(void)
             printf("\n");
             exit(0);
         }
-        cmd[strlen(cmd) - 1] = '\0';
-        i = 0;
+        cmd[strcspn(cmd, "\n")] = '\0';
+ 	i = 0;
         token = strtok(cmd, DELIM);
-        while (token != NULL)
-        {
+        while (token != NULL && i < MAX_ARGS-1)
+	{
             args[i] = token;
             i++;
             token = strtok(NULL, DELIM);
         }
         args[i] = NULL;
+        if (i > 0 && strcmp(args[0], "exit") == 0)
+        {
+            exit(0);
+        }
         if (fork() == 0)
         {
-            if (execve(args[0], args, NULL) == -1)
+            if (execvp(args[0], args) == -1)
             {
                 perror(args[0]);
             }
