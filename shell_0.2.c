@@ -1,6 +1,6 @@
 #include "main.h"
 
-int main(void)
+int main2(void)
 {
     char cmd[MAX_CMD_LEN];
     char *args[MAX_ARGS];
@@ -43,4 +43,7 @@ int main(void)
         }
     }
     return (0);
+}
+int run2() {
+    return main2();
 }

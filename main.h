@@ -32,5 +32,20 @@ char *_getenv(const char *name);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 void print_environment(void);
+
+int run();
+int run2();
+int run3();
+int run4();
+int run5();
+int main() {
+    int result = 0;
+    result += run();
+    result += run2();
+    result += run3();
+    result += run4();
+    result += run5();
+    return result;
+}
 #endif /* MAIN_H */
 

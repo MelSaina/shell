@@ -13,7 +13,7 @@ void print_environment(void)
     }
 }
 
-int main(void)
+int main5(void)
 {
     char cmd[MAX_CMD_LEN];
     char *args[MAX_ARGS];
@@ -90,4 +90,7 @@ int main(void)
     }
 
     return (0);
+}
+int run5() {
+    return main5();
 }

@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-int main(void)
+int main4(void)
 {
     char cmd[MAX_CMD_LEN];
     char *args[MAX_ARGS];
@@ -74,4 +74,6 @@ int main(void)
 
     return (0);
 }
-
+int run4() {
+    return main4();
+}
