@@ -11,7 +11,7 @@
 #define MAX_ARGS 64
 #define PROMPT "#cisfun$ "
 #define DELIM " \t\r\n\a"
-
+extern char **environ;
 /* main.c */
 int _putchar(char c);
 int _strlen(const char *s);
@@ -26,11 +26,11 @@ void handle_signal(int signal);
 char *_getenv(const char *name);
 int _main(void);
 extern char **environ;
+
 /* def */
 char *_getenv(const char *name);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 void print_environment(void);
-
 #endif /* MAIN_H */
 

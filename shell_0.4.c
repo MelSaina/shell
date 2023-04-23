@@ -1,9 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 
-
-extern char **environ;
-
 int main(void)
 {
     char cmd[MAX_CMD_LEN];
